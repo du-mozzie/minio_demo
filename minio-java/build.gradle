@@ -1,0 +1,52 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.du'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.aliyun.com/repository/central'}
+    maven { url 'https://maven.aliyun.com/repository/jcenter' }
+    maven { url 'https://maven.aliyun.com/repository/public' }
+    maven {
+        credentials {
+            username '5f1109bd7ec18baeb850de3b'
+            password ']m6_([W(uls('
+        }
+        url 'https://packages.aliyun.com/maven/repository/2017514-release-YQj8n2/'
+    }
+    maven {
+        credentials {
+            username '5f1109bd7ec18baeb850de3b'
+            password ']m6_([W(uls('
+        }
+        url 'https://packages.aliyun.com/maven/repository/2017514-snapshot-OGDtG2/'
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    //minio依赖
+    implementation 'io.minio:minio:8.0.3'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    implementation 'cn.hutool:hutool-core:5.6.3'
+    implementation 'com.fjhtxx.cloud:mod-core:1.0.32-SNAPSHOT'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.4'
+    implementation 'com.querydsl:querydsl-jpa:4.3.1'
+    implementation 'com.querydsl:querydsl-apt:4.3.1'
+    implementation 'com.querydsl:querydsl-sql:4.3.1'
+    implementation 'mysql:mysql-connector-java:8.0.26'
+
+    //ffmpeg依赖
+    implementation group: 'com.tagtraum', name: 'ffmpeg', version: '4.0.0', ext: 'pom'
+
+    annotationProcessor 'com.querydsl:querydsl-apt::jpa'
+    annotationProcessor('javax.persistence:javax.persistence-api')
+    annotationProcessor('javax.annotation:javax.annotation-api')
+}

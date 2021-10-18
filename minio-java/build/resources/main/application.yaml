@@ -1,0 +1,36 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/minio?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&useUnicode=true
+    username: root
+    password: root
+server:
+  port: 8001
+minio:
+  endpoint: http://192.168.10.100:9000
+  # 公网地址
+  filHost:
+  #密钥
+  accessKey: admin
+  secretKey: 12345678
+  # 分片文件存储桶
+  chunkBucket: chunk
+  # 合并后的文件存储桶
+  bucket: video
+  # 获取外链超时时间，单位分钟
+  chunkExpiry: 60
+ffmpeg:
+  #linux服务器地址
