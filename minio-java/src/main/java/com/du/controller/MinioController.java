@@ -35,7 +35,6 @@ public class MinioController {
         return Resp.ok(InitChunkResp.fromEntity(entity));
     }
 
-
     @PostMapping("/composeFile")
     public Resp<ComposeFileResp> composeFile(@RequestBody ComposeChunkReq composeChunkReq) {
         return Resp.ok(ComposeFileResp.fromEntity(minioService.composeFile(composeChunkReq.toEntity())));
