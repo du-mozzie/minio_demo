@@ -18,9 +18,9 @@ spring:
     username: root
     password: root
 server:
-  port: 8001
+  port: 8002
 minio:
-  endpoint: http://192.168.10.100:9000
+  endpoint: http://192.168.10.35:9000
   # 公网地址
   domainName:
   #密钥

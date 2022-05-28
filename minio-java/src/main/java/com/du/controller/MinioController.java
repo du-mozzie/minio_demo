@@ -25,7 +25,7 @@ public class MinioController {
     private final MinioService minioService;
 
     @PostMapping("/upload")
-    public Resp<String> uploadFile(@RequestParam MultipartFile file) throws Exception {
+    public Resp<String> uploadFile(@RequestBody MultipartFile file) throws Exception {
         return Resp.ok(minioService.uploadFile(file));
     }
 

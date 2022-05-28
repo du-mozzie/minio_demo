@@ -21,7 +21,7 @@ public class QUploadDo extends EntityPathBase<UploadDo> {
 
     public final NumberPath<Integer> chunkCount = createNumber("chunkCount", Integer.class);
 
-    public final StringPath fileHost = createString("fileHost");
+    public final StringPath domainName = createString("domainName");
 
     public final StringPath fileMd5 = createString("fileMd5");
 
